@@ -1,0 +1,160 @@
+/* ---------- GLOBAL STYLING ---------- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d1117;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+/* ---------- MOVIE CARDS ---------- */
+.movie>div {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.movie>div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+.movie>div img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.movie>div:hover img {
+  transform: scale(1.1);
+}
+
+.movie .card-body {
+  background: linear-gradient(to top, rgba(13, 17, 23, 0.9), transparent);
+  padding: 10px;
+  border-bottom: none !important;
+}
+.movie h4,
+.movie h5 {
+  border-bottom: none !important;
+}
+.movie .card-title {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 5px !important;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.movie a {
+  text-decoration: none !important;
+  color: inherit;
+}
+.movie .card-text {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* ---------- DETAILS CONTAINER ---------- */
+#details-container {
+  background-color: rgba(10, 20, 35, 0.85);
+  backdrop-filter: blur(8px) saturate(150%);
+  color: #fefefe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  overflow-y: auto;
+  height: 100vh;
+  animation: fadeInDetails 0.4s ease-out;
+}
+
+@keyframes fadeInDetails {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#global-container {
+  border-radius: 20px;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* ---------- MOVIE INFO ---------- */
+#info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 700px;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+#info-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+#info-container h4 {
+  font-style: italic;
+  color: #a9a9a9;
+  margin-bottom: 15px;
+}
+
+#info-container h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#info-container p {
+  line-height: 1.4;
+  color: #e0e0e0;
+}
+
+/* ---------- MOVIE IMAGE ---------- */
+#image-container img {
+  border-radius: 15px;
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media screen and (max-width: 900px) {
+  #image-container img {
+    width: 200px;
+    height: 300px;
+  }
+
+  #info-container h1 {
+    font-size: 1.5rem;
+  }
+
+  #info-container h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #details-container {
+    padding: 20px 10px;
+  }
+
+  #image-container {
+    display: none;
+  }
+}
